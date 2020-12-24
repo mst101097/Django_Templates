@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{mytext|capfirst|upper}}</h1>
+<h3>{{ myhtml|safe }}</h3>
+
+<h1>This is a html file about us </h1>
+<p>This is file extends by base html file</p>
+<p>this is using rander templateing</p>
+<p>
+    {{my_num}}
+    {{mylist}}
+</p>
+<ul>
+    <li>item 1</li>
+    <li>item 2</li>
+</ul>
+<ul>
+{% for myitem in mylist  %}
+    {% if myitem != 654 %}
+    <li>{{forloop.counter}}-{{myitem }}</li>
+    {% else %}
+    <li>this is if conditions false result </li>
+    {% endif %}
+{% endfor %}
+</ul>
+{% endblock content %}
+
